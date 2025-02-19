@@ -8,7 +8,9 @@ import { Toaster, toast } from 'react-hot-toast';
 import { Search } from 'lucide-react';
 import { useAuth } from './hooks/useAuth';
 import { supabase } from './lib/supabase';
+import CardsPage from './cardspage';
 
+// Simulate rank checking
 const simulateRankCheck = async (formData: SearchFormType): Promise<RankResult[]> => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const keywords = formData.keywords.split('\n').filter(Boolean);
@@ -27,6 +29,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const { user } = useAuth();
 
+  // Handle form submission
   const handleSubmit = async (formData: SearchFormType) => {
     setIsLoading(true);
     try {
@@ -56,21 +59,28 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Toast Notifications */}
       <Toaster position="top-right" />
+
+      {/* Navbar */}
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-[#5580E9] to-[#8860D0] text-white py-32 lg:py-40 text-center">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          {/* Tagline */}
           <span className="bg-orange-500 text-white px-10 py-2 rounded-full text-base lg:text-lg font-semibold">
-            AI-powered Rank Checker
+            Powered Rank Checker
           </span>
+          {/* Main Heading */}
           <h1 className="text-6xl lg:text-7xl font-bold mt-8 leading-tight">
             Track Your SEO Rankings with Ease
           </h1>
+          {/* Subheading */}
           <p className="mt-6 text-xl lg:text-2xl opacity-90 max-w-3xl mx-auto">
             Monitor your website’s search rankings across different locations and devices in real-time.
           </p>
+          {/* Call-to-Action Button */}
           <button className="mt-10 bg-white text-[#5580E9] px-10 py-4 rounded-lg font-semibold text-lg lg:text-xl shadow-md hover:shadow-lg transition-all">
             Get Started Now
           </button>
@@ -80,11 +90,15 @@ function App() {
       {/* Main Content */}
       <main className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Centered Heading */}
           <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">
             SEO Ranking Analysis
           </h1>
+          {/* Search Form */}
           <SearchForm onSubmit={handleSubmit} isLoading={isLoading} />
+          {/* Results Table */}
           <ResultsTable results={results} />
+          {/* Ranking History (if user is logged in) */}
           {user && <RankingHistory />}
         </div>
       </main>
@@ -101,56 +115,61 @@ function App() {
 
       {/* What We Do Section */}
       <section className="py-20 bg-gradient-to-br from-[#C1C8E4] to-[#F9FAFB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">What We Do</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#5580E9] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="text-white w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#1A1A1A]">Keyword Tracking</h3>
-              <p className="mt-2 text-gray-600">
-                Track your website's keyword rankings in real-time.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#8860D0] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="text-white w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#1A1A1A]">Device-Specific Analysis</h3>
-              <p className="mt-2 text-gray-600">
-                Analyze rankings across mobile, tablet, and desktop devices.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#C1C8E4] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Search className="text-white w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-semibold text-[#1A1A1A]">Location-Based Insights</h3>
-              <p className="mt-2 text-gray-600">
-                Get location-specific ranking data for targeted optimization.
-              </p>
-            </div>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">What We Do</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Card 1 */}
+      <div className="text-center">
+        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <img src="/src/icongif43.gif" alt="Performance Monitoring Icon" className="w-full h-full object-cover" />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold text-[#1A1A1A]">Performance Monitoring</h3>
+        <p className="mt-2 text-gray-600">
+          Continuously monitor your website's performance metrics for optimal results.
+        </p>
+      </div>
+      {/* Card 2 */}
+      <div className="text-center">
+        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <img src="/src/icongif40.gif" alt="Device Optimization Icon" className="w-full h-full object-cover" />
+        </div>
+        <h3 className="text-xl font-semibold text-[#1A1A1A]">Device Optimization</h3>
+        <p className="mt-2 text-gray-600">
+          Optimize your website's user experience across all devices seamlessly.
+        </p>
+      </div>
+      {/* Card 3 */}
+      <div className="text-center">
+        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
+          <img src="/src/icongif41.gif" alt="Geo-Targeting Insights Icon" className="w-full h-full object-cover" />
+        </div>
+        <h3 className="text-xl font-semibold text-[#1A1A1A]">Geo-Targeting Insights</h3>
+        <p className="mt-2 text-gray-600">
+          Unlock actionable insights tailored to specific geographic regions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gradient-to-br from-[#F9FAFB] to-[#C1C8E4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">Why Choose Us?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Card 1 */}
             <div className="flex items-center">
               <div className="w-16 h-16 bg-[#5580E9] rounded-full flex items-center justify-center mr-4">
                 <Search className="text-white w-8 h-8" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-[#1A1A1A]">AI-Powered Insights</h3>
+                <h3 className="text-xl font-semibold text-[#1A1A1A]">Powered Insights</h3>
                 <p className="mt-2 text-gray-600">
-                  Leverage cutting-edge AI to get actionable insights.
+                  Leverage cutting-edge to get actionable insights.
                 </p>
               </div>
             </div>
+            {/* Card 2 */}
             <div className="flex items-center">
               <div className="w-16 h-16 bg-[#8860D0] rounded-full flex items-center justify-center mr-4">
                 <Search className="text-white w-8 h-8" />
@@ -165,6 +184,7 @@ function App() {
           </div>
         </div>
       </section>
+      <CardsPage></CardsPage>
 
       {/* Footer Section */}
       <footer className="bg-[#1A1A1A] text-white py-12">
@@ -172,7 +192,7 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Branding Section */}
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-[#5580E9]">RankTracker</h3>
+              <h3 className="text-xl font-bold text-[#5580E9]">SEONEWTOOL</h3>
               <p className="mt-4 text-gray-400">
                 Your go-to tool for tracking SEO rankings with ease.
               </p>
@@ -243,9 +263,11 @@ function App() {
             </div>
           </div>
 
+    
+
           {/* Copyright */}
           <div className="mt-12 text-center text-gray-400">
-            &copy; {new Date().getFullYear()} RankTracker. All rights reserved.
+            &copy; {new Date().getFullYear()} SEONEWTOOL. All rights reserved.
           </div>
         </div>
       </footer>
