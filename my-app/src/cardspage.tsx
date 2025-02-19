@@ -140,19 +140,19 @@ const CardsPage = () => {
           <Card
             title="Keyword Tracking"
             role="Monitor rankings in real-time."
-            icon="/src/icongif3.gif" // First icon
+            icon="/public/assets/icongif3.gif" // First icon
           />
           {/* Card 2 */}
           <Card
             title="Device Analysis"
             role="Optimize for mobile, tablet, and desktop."
-            icon="/src/icongif5.gif" // Second icon
+            icon="/public/assets/icongif5.gif" // Second icon
           />
           {/* Card 3 */}
           <Card
             title="Location Insights"
             role="Get location-specific ranking data."
-            icon="/src/icongif6.gif" // Third icon
+            icon="/public/assets/icongif6.gif" // Third icon
           />
         </div>
       </div>

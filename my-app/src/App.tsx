@@ -124,7 +124,7 @@ function App() {
       {/* Card 1 */}
       <div className="text-center">
         <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <img src="/src/icongif43.gif" alt="Performance Monitoring Icon" className="w-full h-full object-cover" />
+          <img src="/public/assets/icongif43.gif" alt="Performance Monitoring Icon" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-xl font-semibold text-[#1A1A1A]">Performance Monitoring</h3>
         <p className="mt-2 text-gray-600">
@@ -134,7 +134,7 @@ function App() {
       {/* Card 2 */}
       <div className="text-center">
         <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <img src="/src/icongif40.gif" alt="Device Optimization Icon" className="w-full h-full object-cover" />
+          <img src="/public/assets/icongif40.gif" alt="Device Optimization Icon" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-xl font-semibold text-[#1A1A1A]">Device Optimization</h3>
         <p className="mt-2 text-gray-600">
@@ -144,7 +144,7 @@ function App() {
       {/* Card 3 */}
       <div className="text-center">
         <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
-          <img src="/src/icongif41.gif" alt="Geo-Targeting Insights Icon" className="w-full h-full object-cover" />
+          <img src="/public/assets/icongif41.gif" alt="Geo-Targeting Insights Icon" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-xl font-semibold text-[#1A1A1A]">Geo-Targeting Insights</h3>
         <p className="mt-2 text-gray-600">
@@ -163,7 +163,7 @@ function App() {
       {/* Card 1 */}
       <div className="flex items-center">
         <div className="w-16 h-16 flex items-center justify-center mr-4">
-          <img src="/src/icongif42.gif" alt="Powered Insights Icon" className="w-full h-full object-cover" />
+          <img src="/public/assets/icongif42.gif" alt="Powered Insights Icon" className="w-full h-full object-cover" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-[#1A1A1A]">Powered Insights</h3>
@@ -175,7 +175,7 @@ function App() {
       {/* Card 2 */}
       <div className="flex items-center">
         <div className="w-16 h-16 flex items-center justify-center mr-4">
-          <img src="/src/icongif44.gif" alt="Real-Time Updates Icon" className="w-full h-full object-cover" />
+          <img src="/public/assets/icongif44.gif" alt="Real-Time Updates Icon" className="w-full h-full object-cover" />
         </div>
         <div>
           <h3 className="text-xl font-semibold text-[#1A1A1A]">Real-Time Updates</h3>
