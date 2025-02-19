@@ -154,36 +154,38 @@ function App() {
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gradient-to-br from-[#F9FAFB] to-[#C1C8E4]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">Why Choose Us?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Card 1 */}
-            <div className="flex items-center">
-              <div className="w-16 h-16 bg-[#5580E9] rounded-full flex items-center justify-center mr-4">
-                <Search className="text-white w-8 h-8" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-[#1A1A1A]">Powered Insights</h3>
-                <p className="mt-2 text-gray-600">
-                  Leverage cutting-edge to get actionable insights.
-                </p>
-              </div>
-            </div>
-            {/* Card 2 */}
-            <div className="flex items-center">
-              <div className="w-16 h-16 bg-[#8860D0] rounded-full flex items-center justify-center mr-4">
-                <Search className="text-white w-8 h-8" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-[#1A1A1A]">Real-Time Updates</h3>
-                <p className="mt-2 text-gray-600">
-                  Get real-time updates on your rankings and performance.
-                </p>
-              </div>
-            </div>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">Why Choose Us?</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Card 1 */}
+      <div className="flex items-center">
+        <div className="w-16 h-16 flex items-center justify-center mr-4">
+          <img src="/src/icongif42.gif" alt="Powered Insights Icon" className="w-full h-full object-cover" />
         </div>
-      </section>
+        <div>
+          <h3 className="text-xl font-semibold text-[#1A1A1A]">Powered Insights</h3>
+          <p className="mt-2 text-gray-600">
+            Leverage cutting-edge AI to get actionable insights.
+          </p>
+        </div>
+      </div>
+      {/* Card 2 */}
+      <div className="flex items-center">
+        <div className="w-16 h-16 flex items-center justify-center mr-4">
+          <img src="/src/icongif44.gif" alt="Real-Time Updates Icon" className="w-full h-full object-cover" />
+        </div>
+        <div>
+          <h3 className="text-xl font-semibold text-[#1A1A1A]">Real-Time Updates</h3>
+          <p className="mt-2 text-gray-600">
+            Get real-time updates on your rankings and performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       <CardsPage></CardsPage>
 
       {/* Footer Section */}
