@@ -152,7 +152,7 @@ const CardsPage = () => {
           <Card
             title="Location Insights"
             role="Get location-specific ranking data."
-            icon="/public/assets/icongif6.gif" // Third icon
+            icon="assets/icongif6.gif" // Third icon
           />
         </div>
       </div>
