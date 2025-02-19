@@ -9,6 +9,9 @@ import { Search } from 'lucide-react';
 import { useAuth } from './hooks/useAuth';
 import { supabase } from './lib/supabase';
 import CardsPage from './cardspage';
+import icongif25 from './assets/icongif25.gif';
+import icongif44 from './assets/icongif44.gif';
+import icongif42 from './assets/icongif43.gif';
 
 // Simulate rank checking
 const simulateRankCheck = async (formData: SearchFormType): Promise<RankResult[]> => {
