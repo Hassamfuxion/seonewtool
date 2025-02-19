@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom Gradient Background */
+body {
+  background: linear-gradient(135deg, #5580E9, #8860D0);
+
+  font-family: Rebond grotesque, sans-serif;
+}
+

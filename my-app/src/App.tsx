@@ -11,9 +11,7 @@ import { supabase } from './lib/supabase';
 
 const simulateRankCheck = async (formData: SearchFormType): Promise<RankResult[]> => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
-
   const keywords = formData.keywords.split('\n').filter(Boolean);
-
   return keywords.map((keyword) => ({
     keyword: keyword.trim(),
     position: Math.floor(Math.random() * 100) + 1,
@@ -34,8 +32,6 @@ function App() {
     try {
       const newResults = await simulateRankCheck(formData);
       setResults(newResults);
-
-      // Save results to Supabase if user is authenticated
       if (user) {
         const { error } = await supabase.from('rank_history').insert(
           newResults.map((result) => ({
@@ -47,7 +43,6 @@ function App() {
             location: result.location,
           }))
         );
-
         if (error) throw error;
         toast.success('Rankings saved to your history!');
       }
@@ -64,51 +59,196 @@ function App() {
       <Toaster position="top-right" />
       <Navbar />
 
-      {/* Inline CSS for keyframes animation */}
-      <style>
-        {`
-          @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-          }
-        `}
-      </style>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-[#5580E9] to-[#8860D0] text-white py-32 lg:py-40 text-center">
+        <div className="max-w-6xl mx-auto px-6 lg:px-12">
+          <span className="bg-orange-500 text-white px-10 py-2 rounded-full text-base lg:text-lg font-semibold">
+            AI-powered Rank Checker
+          </span>
+          <h1 className="text-6xl lg:text-7xl font-bold mt-8 leading-tight">
+            Track Your SEO Rankings with Ease
+          </h1>
+          <p className="mt-6 text-xl lg:text-2xl opacity-90 max-w-3xl mx-auto">
+            Monitor your website’s search rankings across different locations and devices in real-time.
+          </p>
+          <button className="mt-10 bg-white text-[#5580E9] px-10 py-4 rounded-lg font-semibold text-lg lg:text-xl shadow-md hover:shadow-lg transition-all">
+            Get Started Now
+          </button>
+        </div>
+      </section>
 
+      {/* Main Content */}
       <main className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Search className="h-12 w-12 text-indigo-600 mx-auto" />
-            <h1
-              className="mt-4 text-4xl font-bold tracking-tight text-gray-900"
-              style={{
-                display: 'inline-block',
-                overflow: 'hidden',
-                whiteSpace: 'nowrap',
-                animation: 'typing 2s steps(30) 1s forwards',
-                width: '100%',
-                position: 'relative',
-                zIndex: 1,
-              }}
-            >
-              Keyword Rank Checker
-            </h1>
-            <p className="mt-2 text-lg text-gray-600">
-              Track your website's position in search results across different locations and devices
-            </p>
-            {!user && (
-              <p className="mt-2 text-sm text-gray-500">
-                Sign in to save your ranking history and track changes over time
-              </p>
-            )}
-          </div>
-
-          <div className="mt-12">
-            <SearchForm onSubmit={handleSubmit} isLoading={isLoading} />
-            <ResultsTable results={results} />
-            {user && <RankingHistory />}
-          </div>
+          <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">
+            SEO Ranking Analysis
+          </h1>
+          <SearchForm onSubmit={handleSubmit} isLoading={isLoading} />
+          <ResultsTable results={results} />
+          {user && <RankingHistory />}
         </div>
       </main>
+
+      {/* SEO Tracking Section */}
+      <section className="py-20 bg-gradient-to-br from-[#5580E9] to-[#8860D0] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">SEO Tracking Made Simple</h2>
+          <p className="text-lg opacity-90">
+            Our platform provides real-time insights into your website's performance, helping you optimize for better rankings.
+          </p>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="py-20 bg-gradient-to-br from-[#C1C8E4] to-[#F9FAFB]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">What We Do</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#5580E9] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="text-white w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1A1A1A]">Keyword Tracking</h3>
+              <p className="mt-2 text-gray-600">
+                Track your website's keyword rankings in real-time.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#8860D0] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="text-white w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1A1A1A]">Device-Specific Analysis</h3>
+              <p className="mt-2 text-gray-600">
+                Analyze rankings across mobile, tablet, and desktop devices.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-[#C1C8E4] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Search className="text-white w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-[#1A1A1A]">Location-Based Insights</h3>
+              <p className="mt-2 text-gray-600">
+                Get location-specific ranking data for targeted optimization.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-gradient-to-br from-[#F9FAFB] to-[#C1C8E4]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">Why Choose Us?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex items-center">
+              <div className="w-16 h-16 bg-[#5580E9] rounded-full flex items-center justify-center mr-4">
+                <Search className="text-white w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A1A1A]">AI-Powered Insights</h3>
+                <p className="mt-2 text-gray-600">
+                  Leverage cutting-edge AI to get actionable insights.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="w-16 h-16 bg-[#8860D0] rounded-full flex items-center justify-center mr-4">
+                <Search className="text-white w-8 h-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-[#1A1A1A]">Real-Time Updates</h3>
+                <p className="mt-2 text-gray-600">
+                  Get real-time updates on your rankings and performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="bg-[#1A1A1A] text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Branding Section */}
+            <div className="text-center md:text-left">
+              <h3 className="text-xl font-bold text-[#5580E9]">RankTracker</h3>
+              <p className="mt-4 text-gray-400">
+                Your go-to tool for tracking SEO rankings with ease.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div >
+              <h4 className="text-lg font-semibold text-[#8860D0]">Quick Links</h4>
+              <ul className="mt-4 space-y-2 text-gray-400">
+                <li>
+                  <a href="/about" className="hover:text-white transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="/contact" className="hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a href="/privacy" className="hover:text-white transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms" className="hover:text-white transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social Media */}
+            <div className="text-center">
+              <h4 className="text-lg font-semibold text-[#C1C8E4]">Follow Us</h4>
+              <div className="mt-4 flex justify-center space-x-6">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <svg
+                    className="w-6 h-6 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                  </svg>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <svg
+                    className="w-6 h-6 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <svg
+                    className="w-6 h-6 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.989H8.438V12h2.562V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.128 22 16.991 22 12z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright */}
+          <div className="mt-12 text-center text-gray-400">
+            &copy; {new Date().getFullYear()} RankTracker. All rights reserved.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

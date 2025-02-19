@@ -1,23 +1,26 @@
 import React from 'react';
-import { Search, LogIn, LogOut, User } from 'lucide-react';
+import { LogIn, LogOut, User } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
+import logo from '../logo.png'; // Ensure logo is in src/
 
 export function Navbar() {
   const { user, signIn, signOut } = useAuth();
 
   return (
-    <nav className="bg-white shadow-sm">
+    <nav className="bg-white shadow-sm fixed top-0 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Search className="h-8 w-8 text-indigo-600" />
-            <span className="text-2xl font-bold">
-              <span className="text-gray-900">SEO</span>
-              <span className="text-indigo-600">Tool</span>
-            </span>
-          </div>
+        <div className="h-16 flex items-center justify-between relative">
           
-          <div className="flex items-center gap-4">
+          {/* Empty div to balance flex space */}
+          <div className="w-1/3"></div>
+
+          {/* Centered Logo */}
+          <div className="w-1/3 flex justify-center absolute left-1/2 transform -translate-x-1/2">
+            <img src={logo} alt="Logo" className="h-14 w-auto" />
+          </div>
+
+          {/* Auth Section (Aligned Right) */}
+          <div className="w-1/3 flex justify-end">
             {user ? (
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-2">
