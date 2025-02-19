@@ -9,9 +9,9 @@ import { Search } from 'lucide-react';
 import { useAuth } from './hooks/useAuth';
 import { supabase } from './lib/supabase';
 import CardsPage from './cardspage';
-import icongif25 from './assets/icongif25.gif';
-import icongif44 from './assets/icongif44.gif';
-import icongif42 from './assets/icongif43.gif';
+import Card from './seocard';
+import FAQPage from './faq';
+
 
 // Simulate rank checking
 const simulateRankCheck = async (formData: SearchFormType): Promise<RankResult[]> => {
@@ -91,7 +91,7 @@ function App() {
       </section>
 
       {/* Main Content */}
-      <main className="py-10">
+      <main className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Centered Heading */}
           <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">
@@ -155,6 +155,9 @@ function App() {
   </div>
 </section>
 
+
+<Card></Card>
+
       {/* Why Choose Us Section */}
       <section className="py-20 bg-gradient-to-br from-[#F9FAFB] to-[#C1C8E4]">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -190,6 +193,7 @@ function App() {
 
 
       <CardsPage></CardsPage>
+      <FAQPage></FAQPage>
 
       {/* Footer Section */}
       <footer className="bg-[#1A1A1A] text-white py-12">
@@ -268,7 +272,7 @@ function App() {
             </div>
           </div>
 
-    
+        
 
           {/* Copyright */}
           <div className="mt-12 text-center text-gray-400">
@@ -279,5 +283,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
