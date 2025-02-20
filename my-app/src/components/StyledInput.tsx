@@ -69,8 +69,8 @@ const StyledWrapper = styled.div`
     background: linear-gradient(173deg, rgb(0, 0, 0) 0%, #14161a 100%);
     border-radius: 1rem;
     box-shadow:
-      10px 10px 20px #0e1013,
-      -10px -10px 40px #383e4b;
+      10px 10px 20px rgb(112, 1, 177),
+      -10px -10px 40pxrgb(163, 0, 228);
     padding: 0.3rem;
     gap: 0.3rem;
   }
@@ -79,7 +79,7 @@ const StyledWrapper = styled.div`
   .input-container textarea,
   .input-container select {
     border-radius: 0.8rem;
-    background: #23272f;
+    background:rgb(1, 36, 100);
     box-shadow:
       inset 5px 5px 10px #0e1013,
       inset -5px -5px 10px #383e4b;

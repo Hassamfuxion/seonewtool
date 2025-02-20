@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Card = () => {
   return (
-    <StyledWrapper style={{background:'linear-gradient(744deg,rgb(42, 2, 117),rgb(0, 0, 0) 60%,rgb(0, 0, 0))',color:'white'}}>
+    <StyledWrapper>
       {/* SEO Ranking Heading */}
       <h1 style={{
         textAlign: 'center',
@@ -19,7 +19,7 @@ const Card = () => {
       </h1>
 
       {/* Center-Aligned Card */}
-      <div className="container-card-charts" >
+      <div className="container-card-charts">
         <div className="outer">
           <div className="dot" />
           <div className="card" >

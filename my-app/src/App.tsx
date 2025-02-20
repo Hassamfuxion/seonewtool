@@ -69,10 +69,10 @@ function App() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#5580E9] to-[#8860D0] text-white py-32 lg:py-40 text-center" style={{background:'linear-gradient(744deg,rgb(0, 0, 0),rgb(0, 0, 0) 60%,rgb(42, 2, 117))',color:'white'}}>
+      <section className="relative bg-gradient-to-r from-[#5580E9] to-[#8860D0] text-white py-32 lg:py-40 text-center">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
           {/* Tagline */}
-          <span className="bg-blue-500 text-white px-10 py-2 rounded-full text-base lg:text-lg font-semibold">
+          <span className="bg-orange-500 text-white px-10 py-2 rounded-full text-base lg:text-lg font-semibold">
             Powered Rank Checker
           </span>
           {/* Main Heading */}
@@ -91,7 +91,7 @@ function App() {
       </section>
 
       {/* Main Content */}
-      <main className="py-20" style={{background:'linear-gradient(744deg,rgb(42, 2, 117),rgb(0, 0, 0) 60%,rgb(0, 0, 0))',color:'white'}}>
+      <main className="py-20" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
           {/* Centered Heading */}
         
@@ -105,7 +105,7 @@ function App() {
       </main>
 
       {/* SEO Tracking Section */}
-      <section className="py-20 bg-gradient-to-br from-[#5580E9] to-[#8860D0] text-white" style={{background:'linear-gradient(744deg,rgb(42, 2, 117),rgb(7, 49, 238) 60%,rgb(0, 0, 0))',color:'white'}}>
+      <section className="py-20 bg-gradient-to-br from-[#5580E9] to-[#8860D0] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">SEO Tracking Made Simple</h2>
           <p className="text-lg opacity-90">
@@ -115,7 +115,7 @@ function App() {
       </section>
 
       {/* What We Do Section */}
-      <section className="py-20 bg-gradient-to-br from-[#C1C8E4] to-[#F9FAFB]" >
+      <section className="py-20 bg-gradient-to-br from-[#C1C8E4] to-[#F9FAFB]">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <h2 className="text-4xl font-bold text-center text-[#1A1A1A] mb-8">What We Do</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -131,7 +131,7 @@ function App() {
       </div>
       {/* Card 2 */}
       <div className="text-center">
-        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4" style={{background:'linear-gradient(744deg,rgb(42, 2, 117),rgb(0, 0, 0) 60%,rgb(0, 0, 0))',color:'white'}}>
+        <div className="w-16 h-16 flex items-center justify-center mx-auto mb-4">
           <img src="assets/icongif40.gif" alt="Device Optimization Icon" className="w-full h-full object-cover" />
         </div>
         <h3 className="text-xl font-semibold text-[#1A1A1A]">Device Optimization</h3>
@@ -194,7 +194,7 @@ function App() {
       <FAQPage></FAQPage>
 
       {/* Footer Section */}
-      <footer className="bg-[black] text-white py-12">
+      <footer className="bg-[#1A1A1A] text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Branding Section */}
