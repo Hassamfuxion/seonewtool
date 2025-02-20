@@ -40,7 +40,7 @@ const FAQPage = () => {
   marginBottom: '40px',
   fontFamily: 'Lato, sans-serif',
   fontSize: '48px',
-  background: 'linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb)', // Gradient background
+  background: 'linear-gradient(744deg, #af40ff,rgb(255, 255, 255) 60%, #00ddeb)', // Gradient background
   WebkitBackgroundClip: 'text', // Clip the gradient to the text
   backgroundClip: 'text', // Standard property for modern browsers
   color: 'transparent', // Make the text transparent to show the gradient
@@ -50,7 +50,7 @@ const FAQPage = () => {
        
 
       {/* FAQ Section */}
-      <div className="faq-container">
+      <div className="faq-container" >
         {faqData.map((faq, index) => (
           <FAQItem key={index} question={faq.question} answer={faq.answer} />
         ))}
@@ -82,7 +82,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom-right, #C1C8E4, #F9FAFB); /* Gradient Background */
+  background: linear-gradient(744deg,rgb(42, 2, 117),rgb(0, 0, 0) 60%,rgb(0, 0, 0)); /* Gradient Background */
   font-family: 'Lato', sans-serif;
 
   .faq-container {

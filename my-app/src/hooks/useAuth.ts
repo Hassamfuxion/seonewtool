@@ -8,7 +8,7 @@ export function useAuth() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check active sessions and sets the user
+    // Check active sessions and set the user
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null);
       setLoading(false);
@@ -28,8 +28,8 @@ export function useAuth() {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: `${window.location.origin}/auth/callback`
-        }
+          redirectTo: `${window.location.origin}/auth/callback`, // Ensure this matches the redirect URI in Google Cloud Console
+        },
       });
 
       if (error) throw error;
@@ -54,6 +54,6 @@ export function useAuth() {
     user,
     loading,
     signIn,
-    signOut
+    signOut,
   };
 }

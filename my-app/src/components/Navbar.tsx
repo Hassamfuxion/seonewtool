@@ -3,6 +3,7 @@ import { LogIn, LogOut, User } from 'lucide-react';
 import { useAuth } from '../hooks/useAuth';
 import logo from '../logo.png'; // Ensure logo is in src/
 
+
 export function Navbar() {
   const { user, signIn, signOut } = useAuth();
 

@@ -3,49 +3,36 @@ import styled from 'styled-components';
 
 const Card = () => {
   return (
-    <StyledWrapper>
-      {/* Add the SEO Ranking Heading */}
-      <h1 style={{ textAlign: 'center', color: '#ffffff', marginBottom: '20px', fontFamily: 'Lato, sans-serif', fontSize: '35px', padding: '30px' }}>
-        Monitor Your SEO Performance
+    <StyledWrapper style={{background:'linear-gradient(744deg,rgb(42, 2, 117),rgb(0, 0, 0) 60%,rgb(0, 0, 0))',color:'white'}}>
+      {/* SEO Ranking Heading */}
+      <h1 style={{
+        textAlign: 'center',
+        color: '#ffffff', // White text
+        marginBottom: '40px',
+        fontFamily: 'Lato, sans-serif',
+        fontSize: '30px',
+     
+        WebkitBackgroundClip: 'text',
+        
+      }}>
+        Explore SEO New Tools
       </h1>
-      {/* Center-aligned and resized card */}
-      <div className="container-card-charts" style={{ margin: '0 auto', width: '95%', height: '600px', }}>
-        <div className="card-charts">
-          {/* Main Texts Section */}
-          <div className="main-texts">
-            <div className="title">SEO Performance: Fluctuating</div>
-            <div className="change">Up & Down Trends</div>
-          </div>
-          {/* Stock Exchange-like Animated Graph */}
-          <div className="charts-lines">
-            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
-              {/* Background Grid Lines */}
-              <line x1="0" y1="50" x2="800" y2="50" stroke="#ffffff20" strokeWidth="1" />
-              <line x1="0" y1="100" x2="800" y2="100" stroke="#ffffff20" strokeWidth="1" />
-              <line x1="0" y1="150" x2="800" y2="150" stroke="#ffffff20" strokeWidth="1" />
-              <line x1="0" y1="200" x2="800" y2="200" stroke="#ffffff20" strokeWidth="1" />
-              <line x1="0" y1="250" x2="800" y2="250" stroke="#ffffff20" strokeWidth="1" />
-              <line x1="0" y1="300" x2="800" y2="300" stroke="#ffffff20" strokeWidth="1" />
-              <line x1="0" y1="350" x2="800" y2="350" stroke="#ffffff20" strokeWidth="1" />
-              {/* Red Line (Going Down) */}
-              <path
-                d="M 0 50 C 100 100, 200 150, 300 200 S 400 250, 500 200 S 600 150, 700 100 S 800 50"
-                fill="none"
-                stroke="#ff4d4d"
-                strokeWidth="2"
-                strokeLinecap="round"
-                className="animated-line-down"
-              />
-              {/* Green Line (Going Up) */}
-              <path
-                d="M 0 350 C 100 300, 200 250, 300 200 S 400 150, 500 200 S 600 250, 700 300 S 800 350"
-                fill="none"
-                stroke="#4dff4d"
-                strokeWidth="2"
-                strokeLinecap="round"
-                className="animated-line-up"
-              />
-            </svg>
+
+      {/* Center-Aligned Card */}
+      <div className="container-card-charts" >
+        <div className="outer">
+          <div className="dot" />
+          <div className="card" >
+            <div className="ray" />
+            {/* Updated Content */}
+            <div className="main-texts">
+              <div className="title">Keyword Tracker</div>
+              <div className="subtitle">Monitor rankings in real-time</div>
+            </div>
+            <div className="line topl" />
+            <div className="line leftl" />
+            <div className="line bottoml" />
+            <div className="line rightl" />
           </div>
         </div>
       </div>
@@ -53,6 +40,7 @@ const Card = () => {
   );
 };
 
+// Styled Components
 const StyledWrapper = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap'); /* Import Lato Font */
   display: flex;
@@ -61,110 +49,149 @@ const StyledWrapper = styled.div`
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb);
-  font-family: 'Lato', sans-serif; /* Apply Lato Font Globally */
+  font-family: 'Lato', sans-serif;
+
   .container-card-charts {
-    position: relative;
-    width: 95%; /* Increased width */
-    height: 600px; /* Increased height */
-    background: linear-gradient(
-      to top,
-      rgba(255, 255, 255),
-      rgba(255, 255, 255, 0.1)
-     
-    );
-    border-radius: 32px;
-    padding: 30px; /* Increased padding for better spacing */
-    box-shadow: 0 0px 80px -10px rgba(255, 255, 255, 0.15);
-  
-  }
-  .container-card-charts::before {
-    position: absolute;
-    content: "";
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 80px;
-    background-color: #777777;
-    z-index: -10;
-    filter: blur(70px);
-  }
-  .card-charts {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center, #1b1b1b, #000000);
-    border-radius: 32px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 30px; /* Increased padding for better spacing */
-  }
-  .charts-lines {
-    position: relative;
-    width: 100%;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Limit maximum width for responsiveness */
+    margin: 0 auto; /* Center the card horizontally */
   }
-  .charts-lines svg {
+
+  .outer {
+    width: 80%; /* Increased width for horizontal layout */
+    max-width: 800px; /* Limit maximum width */
+    height: 400px; /* Fixed height */
+    border-radius: 10px;
+    padding: 1px;
+    background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+    position: relative;
+  }
+
+  .dot {
+    width: 5px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ffffff;
+    border-radius: 100px;
+    z-index: 2;
+    right: 10%;
+    top: 10%;
+    animation: moveDot 6s linear infinite;
+  }
+
+  @keyframes moveDot {
+    0%,
+    100% {
+      top: 10%;
+      right: 10%;
+    }
+    25% {
+      top: 10%;
+      right: calc(100% - 35px);
+    }
+    50% {
+      top: calc(100% - 30px);
+      right: calc(100% - 35px);
+    }
+    75% {
+      top: calc(100% - 30px);
+      right: 10%;
+    }
+  }
+
+  .card {
+    z-index: 1;
     width: 100%;
     height: 100%;
-    overflow: visible; /* Ensure lines are not clipped */
+    border-radius: 9px;
+    border: solid 1px #202222;
+    background-size: 20px 20px;
+    background: radial-gradient(circle 280px at 0% 0%, #444444,rgb(13, 12, 13));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+    color: #fff;
   }
+
+  
   .main-texts {
     display: flex;
     flex-direction: column;
-    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
   }
+
   .main-texts .title {
-    background-image: linear-gradient(to top left, #92400e, #f9d86d, #a6a6a6);
+    font-weight: bolder;
+    font-size: 3rem; /* Adjusted font size */
+    background: linear-gradient(45deg,rgb(83, 0, 238) 4%, #fff, rgb(83, 0, 238));
     background-clip: text;
-    -webkit-background-clip: text;
     color: transparent;
-    font-size: 32px; /* Increased font size */
-    font-weight: 700; /* Bold title */
+    margin-bottom: 10px;
   }
-  .main-texts .change {
-    background-image: linear-gradient(to right, #8e1414, #ffffff, #ffffff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-size: 24px; /* Increased font size */
-    margin-top: 15px; /* Space between title and change */
+
+  .main-texts .subtitle {
+    font-size: 1.5rem;
+    color: #a7a7a7;
+    margin-top: 0;
   }
-  /* Animation for the red line (going down) */
-  .animated-line-down {
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    animation: draw-down 6s ease-in-out infinite;
+
+  .line {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: #2c2c2c;
   }
-  /* Animation for the green line (going up) */
-  .animated-line-up {
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 2000;
-    animation: draw-up 6s ease-in-out infinite;
+
+  .topl {
+    top: 10%;
+    background: linear-gradient(90deg, #888888 30%, #1d1f1f 70%);
   }
-  @keyframes draw-down {
-    0% {
-      stroke-dashoffset: 2000;
+
+  .bottoml {
+    bottom: 6%;
+  }
+
+  .leftl {
+    left: 0%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, #747474 30%, #222424 70%);
+  }
+
+  .rightl {
+    right: 0%;
+    width: 1px;
+    height: 100%;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .outer {
+      width: 90%; /* Reduce width on smaller screens */
+      height: 300px; /* Reduce height */
     }
-    100% {
-      stroke-dashoffset: 0;
+
+    .main-texts .title {
+      font-size: 2rem; /* Reduce font size */
     }
-  }
-  @keyframes draw-up {
-    0% {
-      stroke-dashoffset: 0;
+
+    .main-texts .subtitle {
+      font-size: 1rem; /* Reduce font size */
     }
-    100% {
-      stroke-dashoffset: -2000;
+
+    .ray {
+      width: 350px; /* Reduce ray width */
+      height: 70px; /* Reduce ray height */
     }
-  }
-  /* Grid Lines Styling */
-  .charts-lines line {
-    stroke: #ffffff20;
-    stroke-width: 1;
   }
 `;
 

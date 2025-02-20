@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // Card Component
 const Card = ({ title, role, icon }: { title: string; role: string; icon: string }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper >
       <div className="e-card playing">
         {/* Waves */}
         <div className="wave" />
@@ -132,7 +132,7 @@ const StyledWrapper = styled.div`
 // Cards Page
 const CardsPage = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#5580E9] to-[#8860D0] text-white">
+    <section className="py-20 bg-gradient-to-br from-[#5580E9] to-[#8860D0] text-white"  style={{background:'linear-gradient(744deg,rgb(42, 2, 117),rgb(0, 0, 0) 60%,rgb(0, 0, 0))',color:'white'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-5xl font-bold mb-12">Explore Our Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
