@@ -66,7 +66,7 @@ const StyledWrapper = styled.div`
   .input-container {
     display: flex;
     align-items: center;
-    background: linear-gradient(173deg, rgb(0, 0, 0) 0%, #14161a 100%);
+   
     border-radius: 1rem;
     box-shadow:
       10px 10px 20px rgb(112, 1, 177),
@@ -79,10 +79,7 @@ const StyledWrapper = styled.div`
   .input-container textarea,
   .input-container select {
     border-radius: 0.8rem;
-    background:rgb(1, 36, 100);
-    box-shadow:
-      inset 5px 5px 10px #0e1013,
-      inset -5px -5px 10px #383e4b;
+    
     width: 100%;
     padding: 1rem;
     border: none;
