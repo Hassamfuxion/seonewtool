@@ -40,7 +40,7 @@ const FAQPage = () => {
   marginBottom: '40px',
   fontFamily: 'Lato, sans-serif',
   fontSize: '48px',
-  background: 'linear-gradient(744deg, #af40ff,rgb(255, 255, 255) 60%, #00ddeb)', // Gradient background
+  background: 'linear-gradient(744deg, #af40ff,rgb(255, 255, 255) 60%,rgb(40, 126, 255))', // Gradient background
   WebkitBackgroundClip: 'text', // Clip the gradient to the text
   backgroundClip: 'text', // Standard property for modern browsers
   color: 'transparent', // Make the text transparent to show the gradient
